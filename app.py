@@ -15,6 +15,8 @@ uploaded_file = st.file_uploader("Upload an image...", type=["png", "jpg", "jpeg
 # Get the expected input shape of the model
 input_shape = model.input_shape[1:]
 
+alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert('L')  # Convert image to grayscale
     img = image.resize(input_shape[:2])  # Resize the image to match the input shape
@@ -28,7 +30,7 @@ if uploaded_file is not None:
 
     # Display the prediction
     predicted_class = np.argmax(prediction)
-    st.write(f'Prediction: {predicted_class}')
+    st.write(f'Prediction: {alphabet[predicted_class]}')
 
     # Display the uploaded image
     st.image(image, caption='Uploaded Image.', use_column_width=True)
