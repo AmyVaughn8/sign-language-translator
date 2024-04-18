@@ -15,7 +15,7 @@ uploaded_file = st.file_uploader("Upload an image...", type=["png", "jpg", "jpeg
 # Get the expected input shape of the model
 input_shape = model.input_shape[1:]
 
-alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y']
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert('L')  # Convert image to grayscale
@@ -30,7 +30,8 @@ if uploaded_file is not None:
 
     # Display the prediction
     predicted_class = np.argmax(prediction)
-    st.write(f'Prediction: {alphabet[predicted_class]}')
+    st.markdown(f'<h2>Prediction: {alphabet[predicted_class]}</h2>', unsafe_allow_html=True)
+
 
     # Display the uploaded image
     st.image(image, caption='Uploaded Image.', use_column_width=True)

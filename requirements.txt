@@ -4,3 +4,6 @@ numpy
 tensorflow
 keras
 scikit-learn
+seaborn
+pandas
+matplotlib
