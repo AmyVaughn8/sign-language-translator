@@ -7,7 +7,24 @@ from tensorflow import keras
 # Load the model
 model = keras.models.load_model('model.h5')
 
+# Set page config
+st.set_page_config(page_title='ASL Interpreter', page_icon=':hand:')
+
+# Title
 st.title("Sign Language Recognition")
+
+st.markdown("""
+    <div>
+        Welcome to the American Sign Language Recognition app! Please upload an image of a hand signing a letter from the ASL alphabet.
+        The model will then predict the corresponding letter. Follow the steps listed below:
+    </div>
+""", unsafe_allow_html=True)
+
+# Instructions
+st.subheader('Instructions')
+st.text('1. Select "Browse Files" to upload an image of a hand signing a letter \n'
+        '2. Wait for the AI to process and display the prediction.\n'
+        "3. View the uploaded image and the model's prediction below.")
 
 # Add file uploader to allow users to upload images
 uploaded_file = st.file_uploader("Upload an image...", type=["png", "jpg", "jpeg"])
