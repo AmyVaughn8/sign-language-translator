@@ -35,7 +35,8 @@ For future iterations of the project, we will seek out more diverse datasets tha
 
 This project was completed in collaboration with:
 - Amy Vaughn
-- Daniel Ung
-- Alfredo Medina
+- Daniel Ung @DannyMang
+- Alfredo Medina @Juuicee
+- Johnny Nguyen @nguyenjl6
 
 
